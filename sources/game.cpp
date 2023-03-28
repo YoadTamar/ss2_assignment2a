@@ -8,10 +8,10 @@ using namespace std;
 
 namespace ariel
 {
-    Game::Game(Player& other1, Player& other2): p1(p1), p2(p2)
+    Game::Game(Player& other1, Player& other2): player1(p1), player2(p2)
     {
-        this->_p1 = other1;
-        this->_p1 = other2;
+        this->player1 = other1;
+        this->player2 = other2;
     }
 
     void Game::playTurn() {}
