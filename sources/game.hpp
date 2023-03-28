@@ -12,7 +12,7 @@ namespace ariel
             int turn;
 
         public:
-            Game(Player& p1, Player& p2);
+            Game(Player& other1, Player& other2);
 
             void playTurn();
 
