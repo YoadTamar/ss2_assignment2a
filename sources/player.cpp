@@ -1,6 +1,7 @@
 #include "player.hpp"
 #include "iostream"
 using namespace std;
+using namespace ariel;
 
 Player::Player(){
     
