@@ -83,36 +83,6 @@ TEST_CASE("play after end")
 }
 
 
-TEST_CASE("player 2 won")
-{
-    Player player1("player1");
-    Player player2("player2");
-
-    Game game(player1,player2);
-    
-    game.playAll();
-
-    bool b1 = player1.cardesTaken() == 0 && player2.cardesTaken() == 26;
-
-    CHECK(b1);
-
-}
-
-TEST_CASE("player 1 won")
-{
-    Player player1("player1");
-    Player player2("player2");
-
-    Game game(player1,player2);
-    
-    game.playAll();
-
-    bool b = player1.cardesTaken() == 26 && player2.cardesTaken() == 0;
-
-    CHECK(b);
-
-}
-
 
 TEST_CASE("check game before start")
 {
@@ -129,7 +99,25 @@ TEST_CASE("check game before start")
 TEST_CASE("wrong input")
 {
     Player player1("player1");
+    Player player2("");
 
     CHECK_THROWS(Game(player1, player1));
+    CHECK_THROWS(Game(player1, player2));
+
+
+}
+
+
+TEST_CASE("play 10 turns") {
+    Player p1("Alice");
+    Player p2("Bob");
+
+    Game game(p1,p2);
+
+    for (int i=0;i<10;i++) {
+        game.playTurn();
+    }
+    CHECK(p1.stacksize() == 16);
+    CHECK(p2.stacksize() == 16);
 
 }
