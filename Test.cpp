@@ -11,7 +11,7 @@ TEST_CASE("intial check")
     Player player1("player1");
     Player player2("player2");
 
-    Game game(p1,p2);
+    Game game(player1, player2);
     
     CHECK(player1.stacksize() == 26);
     CHECK(player1.cardesTaken() == 0);
@@ -92,7 +92,9 @@ TEST_CASE("player 2 won")
     
     game.playAll();
 
-    CHECK(player1.cardesTaken() == 0 && player2.cardesTaken() == 26);
+    bool b1 = player1.cardesTaken() == 0 && player2.cardesTaken() == 26;
+
+    CHECK(b1);
 
 }
 
@@ -105,7 +107,9 @@ TEST_CASE("player 1 won")
     
     game.playAll();
 
-    CHECK(player1.cardesTaken() == 26 && player2.cardesTaken() == 0);
+    bool b = player1.cardesTaken() == 26 && player2.cardesTaken() == 0;
+
+    CHECK(b);
 
 }
 
