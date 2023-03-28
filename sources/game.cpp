@@ -8,7 +8,7 @@ using namespace std;
 
 namespace ariel
 {
-    Game::Game(Player& other1, Player& other2): player1(p1), player2(p2)
+    Game::Game(Player& other1, Player& other2): player1(other1), player2(other2)
     {
         this->player1 = other1;
         this->player2 = other2;
